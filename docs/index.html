@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UFO Sightings: A Statistical Exploration</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="title-hero-section">
+        <div class="hero-content">
+            <h1>Unveiling the Unidentified</h1>
+        </div>
+    </header>
+
+    <section id="globe-viewer-section">
+        <div id="globe-container">
+            <div id="globeViz"></div>
+        </div>
+        <div class="scroll-indicator">Scroll Down for Analysis ↓</div>
+    </section>
+
+    <main>
+        <section id="introduction" class="content-section">
+            <h2>A Statistical Journey Through Reported Phenomena</h2>
+            <p>This interactive exploration delves into a global dataset of publicly reported UFO sightings. From an initial collection, this analysis focuses on <strong id="total-sightings">N/A</strong> rigorously cleaned and validated records. Using statistical techniques, we aim to uncover robust patterns, trends, and distinguishing characteristics from these intriguing accounts. The 3D globe visualization above plots these sightings, with point size logarithmically scaled to the reported duration of the event.</p>
+            
+            <div class="key-insights">
+                <h3>Key Statistical Findings:</h3>
+                <ul>
+                    <li>Peak reporting activity consistently occurs during the evening, typically around <strong id="peak-hour">N/A</strong>. During this specific window, the dominant reported shape is '<strong id="peak-hour-dominant-shape">N/A</strong>'. <span class="insight-detail">(See: <a href="#temporal-analysis">Temporal</a> & <a href="#morphological-analysis">Morphological Analysis</a>)</span></li>
+                    <li>The month of <strong id="peak-month">N/A</strong> shows the highest frequency of UFO sighting reports annually. <span class="insight-detail">(See: <a href="#temporal-analysis">Temporal Analysis</a>)</span></li>
+                    <li>The most frequently described shape (excluding ambiguous terms) is '<strong id="most-common-shape">N/A</strong>', followed by '<strong id="second-most-common-shape">N/A</strong>'. <span class="insight-detail">(See: <a href="#morphological-analysis">Morphological Analysis</a>)</span></li>
+                    <li>Analysis of sighting durations for top shapes reveals that '<strong id="shape-longest-duration">N/A</strong>' reports tend to have the longest median observation time (<strong id="median-duration-longest-shape">N/A</strong>s), while '<strong id="shape-shortest-duration">N/A</strong>' reports have the shortest (<strong id="median-duration-shortest-shape">N/A</strong>s). <span class="insight-detail">(See: <a href="#morphological-analysis">Morphological Analysis</a>)</span></li>
+                    <li>Night-time sightings (median: <strong id="median-duration-night">N/A</strong>s) are reported as lasting significantly longer on average than daytime sightings (median: <strong id="median-duration-day">N/A</strong>s). <span class="insight-detail">(See: <a href="#morphological-analysis">Duration Details</a>)</span></li>
+                    <li>A notable <strong id="proportion-over-5-min">N/A%</strong> of sightings are reported to last longer than 5 minutes, with <strong id="proportion-over-1-hour">N/A%</strong> extending beyond an hour.</li>
+                    <li>The median duration across all valid sightings is approximately <strong id="median-duration-overall">N/A</strong> seconds. The year <strong id="peak-year">N/A</strong> saw a peak in reporting frequency.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="temporal-analysis" class="content-section">
+            <h2>Temporal Dynamics of Sightings</h2>
+            <p>When are these mysterious objects most frequently observed? This section explores temporal trends across years, months, and hours of the day, providing insights into the cyclical nature and long-term patterns of reporting. Charts display data from cleaned and validated records.</p>
+            <div class="chart-container">
+                <h3>Sightings by Year (Recent Trend - Last 30 Years with Data)</h3>
+                <canvas id="yearChart"></canvas> <!-- Removed fixed width/height -->
+            </div>
+            <div class="chart-container">
+                <h3>Sightings by Month (Annual Pattern)</h3>
+                <canvas id="monthChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <h3>Sightings by Hour of Day (Diurnal Pattern)</h3>
+                <canvas id="hourChart"></canvas>
+            </div>
+        </section>
+
+        <section id="geographic-analysis" class="content-section">
+            <h2>Geospatial Distribution of Reports</h2>
+            <p>The 3D globe offers an interactive visualization of global sighting distribution. Below, we quantify this by examining the most common reporting locations at national and sub-national (US States) levels based on the available data.</p>
+            <div class="chart-container">
+                <h3>Top Reporting Countries (Excluding Unknown)</h3>
+                <canvas id="countryChart"></canvas>
+            </div>
+             <div class="chart-container">
+                <h3>Top Reporting US States (For US Sightings)</h3>
+                <canvas id="stateChart"></canvas>
+            </div>
+        </section>
+
+        <section id="morphological-analysis" class="content-section">
+            <h2>Morphological Characteristics & Duration Analysis</h2>
+            <p>UFOs are reported in various forms. This section details the most common shapes described by observers (excluding 'various' or 'unknown') and explores how reported sighting durations vary across these morphologies and by time of day.</p>
+            <div class="chart-container">
+                <h3>Most Common UFO Shapes Reported (Excluding 'Various')</h3>
+                <canvas id="shapeChart"></canvas> 
+            </div>
+            <div id="duration-details" class="additional-insights-text content-subsection"> <!-- Added ID here -->
+                <h4>Duration Details by Shape and Time of Day:</h4>
+                <p>The data suggests interesting variations in reported sighting durations. For instance, among the most common shapes, the median duration for '<strong id="text-shape-longest">N/A</strong>' sightings is <strong id="text-median-longest">N/A</strong> seconds, potentially differing from '<strong id="text-shape-shortest">N/A</strong>' sightings at <strong id="text-median-shortest">N/A</strong> seconds. Reports also indicate that sightings during night hours tend to have longer median durations compared to those during the day. These descriptive statistics hint at patterns that could be explored further with inferential testing.</p>
+                 <p id="peak-hour-shapes-detail">During the peak sighting hour of <strong id="peak-hour-detail-time">N/A</strong>, the most frequently reported shapes include: <strong id="peak-hour-detail-shapes">N/A</strong>.</p>
+            </div>
+        </section>
+        
+        <section id="explore-further" class="content-section">
+            <h2>Explore the Globe Interactively</h2>
+            <p>Revisit the 3D globe by scrolling to the top. Each bright spot represents a reported sighting, with its size reflecting the reported duration. Rotate, zoom, and interact to explore global patterns and sighting density across different regions. This visualization offers a dynamic way to engage with the geospatial aspects of the dataset.</p>
+            <p><em>Note: All analyses are based on publicly reported sightings and reflect the characteristics of the reporting sample, not necessarily the absolute truth of the phenomena.</em></p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Advanced Statistical EDA of UFO Sightings | Masters in Data Science Project. Data processing and visualization performed for educational purposes.</p>
+    </footer>
+
+    <script src="https://unpkg.com/globe.gl"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script> <!-- For better time/date handling if needed -->
+    <script src="js/scripts.js"></script>
+</body>
+</html>
