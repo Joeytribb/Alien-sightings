@@ -1,4 +1,4 @@
-# UFO Sightings Explorer:)
+# UFO Sightings Explorer;)
 
 A 3D interactive globe visualization of UFO sightings built with HTML/JS and Python.
 
